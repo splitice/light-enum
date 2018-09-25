@@ -1,6 +1,6 @@
 function LightEnum(members, extractorFn, indexReverse = true){
     this._forwards = members
-    const extractorFn = extractorFn || function(a){return a}
+    extractorFn = extractorFn || function(a){return a}
     this._extractorFn = extractorFn
     this._backwards = {}
     if(indexReverse){
