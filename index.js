@@ -8,6 +8,14 @@ function LightEnum(members, extractorFn, indexReverse = true){
             this._backwards[extractorFn(members[i])] = i
         }
     }
+    this.enums = {
+        forEach: _forEach.bind(this)
+    }
+}
+function _forEach(cb){
+    for(var i in this._forwards){
+        cb(this.get(i))
+    }
 }
 LightEnum.prototype.get = function(i){
     let v = this._forwards[i]
