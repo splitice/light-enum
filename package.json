@@ -1,0 +1,22 @@
+{
+  "name": "light-enum",
+  "version": "1.0.0",
+  "description": "A light enum library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/splitice/light-enum.git"
+  },
+  "keywords": [
+    "enum"
+  ],
+  "author": "splitice",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/splitice/light-enum/issues"
+  },
+  "homepage": "https://github.com/splitice/light-enum#readme"
+}
