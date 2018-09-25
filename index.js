@@ -9,13 +9,21 @@ function LightEnum(members, extractorFn, indexReverse = true){
         }
     }
     this.enums = {
-        forEach: _forEach.bind(this)
+        forEach: _forEach.bind(this),
+        map: _map.bind(this)
     }
 }
 function _forEach(cb){
     for(var i in this._forwards){
         cb(this.get(i))
     }
+}
+function _map(cb){
+    var ret = []
+    for(var i in this._forwards){
+        ret.push(cb(this.get(i)))
+    }
+    return ret
 }
 LightEnum.prototype.get = function(i){
     let v = this._forwards[i]
