@@ -20,7 +20,7 @@ function _forEach(cb){
 LightEnum.prototype.get = function(i){
     let v = this._forwards[i]
     if(v !== undefined){
-        return {key: i, value: extractorFn(v)}
+        return {key: i, value: this.extractorFn(v)}
     }
     v = this._backwards[i]
     if(v !== undefined){
