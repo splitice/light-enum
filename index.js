@@ -1,4 +1,6 @@
-function LightEnum(members, extractorFn, indexReverse = true){
+function LightEnum(members, extractorFn, indexReverse){
+    indexReverse = indexReverse === undefined ? true : indexReverse
+    
     this._forwards = members
     extractorFn = extractorFn || function(a){return a}
     this._extractorFn = extractorFn
