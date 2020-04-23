@@ -27,6 +27,27 @@ function LightEnum(members, extractorFn, indexReverse){
         forEach: _forEach.bind(this),
         map: _map.bind(this)
     }
+
+    this.enums[Symbol.iterator] = function(){
+        // get the properties of the object 
+        let properties = Object.keys(members);
+        let count = 0;
+        // set to true when the loop is done 
+        isDone = false;
+   
+        // define the next method, need for iterator 
+        let next = () => {
+           // control on last property reach 
+           if(count >= properties.length){
+              isDone = true;
+           }
+           const key = properties[count++]
+           return {done:isDone, value: {key, value: extractorFn(members[key])}};
+        }
+   
+        // return the next method used to iterate 
+        return {next};
+     };
 }
 function _forEach(cb){
     for(var i in this._forwards){
