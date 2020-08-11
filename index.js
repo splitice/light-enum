@@ -42,7 +42,7 @@ function LightEnum(members, extractorFn, indexReverse){
               isDone = true;
            }
            const key = properties[count++]
-           return {done:isDone, value: {key, value: extractorFn(members[key])}};
+           return {done:isDone, value: {key, value: isDone?undefined:extractorFn(members[key])}};
         }
    
         // return the next method used to iterate 
